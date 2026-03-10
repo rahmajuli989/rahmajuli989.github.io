@@ -1,18 +1,31 @@
 <!DOCTYPE html>
-
-<html>
+<html lang="id">
 <head>
-  <meta http-equiv="CONTENT-TYPE" content="text/html; charset=UTF-8">
-  <link rel="stylesheet" href="styles/style.css"/>
-  <title>Welcome</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profil Siswa</title>
+    <style>
+        body { font-family: Arial, sans-serif; background-color: #f4f4f4; display: flex; justify-content: center; padding: 50px; }
+        .card { background: white; padding: 20px; border-radius: 15px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); width: 350px; text-align: center; }
+        .profile-img { width: 150px; height: 150px; border-radius: 50%; object-fit: cover; border: 5px solid #007bff; }
+        h2 { color: #333; margin-bottom: 5px; }
+        p { color: #666; margin: 5px 0; }
+        .info { text-align: left; margin-top: 20px; border-top: 1px solid #eee; padding-top: 10px; }
+    </style>
 </head>
 <body>
-  <h2 style="haloo saya rahma julia!">
-    Welcome
-  </h2>
-  This is an example web page.<br>
-  The page is written in html, to see its markup and edit it click the edit button at the top of the screen.<br>
-  You can open html, css and javascript files using the file manager.<br>
-  To create new files use the menu at the top left of the screen.
+
+<div class="card">
+    <img src="URL_GAMBAR_ANDA" alt="Foto Profil" class="profile-img">
+    <h2>Nama Siswa</h2>
+    <p>NIS/NISN: 232410041</p>
+    
+    <div class="info">
+        <p><strong>Sekolah:</strong> SMK Al-Irsyad</p>
+        <p><strong>Jurusan:</strong> Teknik Komputer & Jaringan</p>
+        <p><strong>Status:</strong> Siswa Aktif</p>
+    </div>
+</div>
+
 </body>
 </html>
