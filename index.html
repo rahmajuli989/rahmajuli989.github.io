@@ -3,29 +3,130 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Profil Siswa</title>
+    <title>Profil Siswa Digital | SMK Al-Irsyad</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
-        body { font-family: Arial, sans-serif; background-color: #f4f4f4; display: flex; justify-content: center; padding: 50px; }
-        .card { background: white; padding: 20px; border-radius: 15px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); width: 350px; text-align: center; }
-        .profile-img { width: 150px; height: 150px; border-radius: 50%; object-fit: cover; border: 5px solid #007bff; }
-        h2 { color: #333; margin-bottom: 5px; }
-        p { color: #666; margin: 5px 0; }
-        .info { text-align: left; margin-top: 20px; border-top: 1px solid #eee; padding-top: 10px; }
+        @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;700&display=swap');
+        
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background: #f8fafc;
+            background-image: radial-gradient(#3b82f6 0.5px, transparent 0.5px);
+            background-size: 30px 30px;
+        }
+
+        .glass-card {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.1);
+        }
+
+        .profile-glow {
+            box-shadow: 0 0 20px rgba(59, 130, 246, 0.5);
+        }
+
+        .animate-fade-in {
+            animation: fadeIn 0.8s ease-out;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
     </style>
 </head>
-<body>
+<body class="min-h-screen flex items-center justify-center p-4">
 
-<div class="card">
-    <img src="URL_GAMBAR_ANDA" alt="Foto Profil" class="profile-img">
-    <h2>Nama Siswa</h2>
-    <p>NIS/NISN: 232410041</p>
-    
-    <div class="info">
-        <p><strong>Sekolah:</strong> SMK Al-Irsyad</p>
-        <p><strong>Jurusan:</strong> Teknik Komputer & Jaringan</p>
-        <p><strong>Status:</strong> Siswa Aktif</p>
+    <!-- Container Utama -->
+    <div class="max-w-md w-full glass-card rounded-[2rem] overflow-hidden animate-fade-in">
+        
+        <!-- Bagian Atas / Banner -->
+        <div class="h-48 bg-gradient-to-br from-blue-600 to-indigo-800 relative">
+            <div class="absolute inset-0 opacity-20 bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')]"></div>
+            
+            <!-- Logo Sekolah (Placeholder) -->
+            <div class="absolute top-6 left-6 flex items-center gap-2 text-white/90">
+                <i class="fas fa-university text-xl"></i>
+                <span class="text-xs font-bold tracking-widest uppercase">SMK Al-Irsyad</span>
+            </div>
+
+            <!-- Status Badge -->
+            <div class="absolute top-6 right-6 bg-green-500/20 border border-green-400 text-green-300 text-[10px] px-3 py-1 rounded-full font-bold uppercase">
+                Aktif
+            </div>
+
+            <!-- Foto Profil -->
+            <div class="absolute -bottom-16 left-1/2 -translate-x-1/2">
+                <div class="relative group">
+                    <div class="absolute -inset-1 bg-gradient-to-tr from-blue-400 to-cyan-400 rounded-full blur opacity-40 group-hover:opacity-100 transition duration-500"></div>
+                    <img src="https://simangu.smksalirsyad-hgl.sch.id/apimangu/uploads/siswa/232410041/1773117342_aca6dbe0.jpg" 
+                         alt="Gambar Siswa" 
+                         class="relative w-32 h-32 rounded-full object-cover border-4 border-white profile-glow bg-white"
+                         onerror="this.src='https://ui-avatars.com/api/?name=Siswa&background=3b82f6&color=fff&size=128'">
+                </div>
+            </div>
+        </div>
+
+        <!-- Detail Informasi -->
+        <div class="pt-20 pb-8 px-8">
+            <div class="text-center mb-8">
+                <h1 class="text-2xl font-extrabold text-slate-800 tracking-tight">Siswa SMK Al-Irsyad</h1>
+                <p class="text-blue-600 font-semibold text-sm mt-1 uppercase tracking-wider">Teknik Komputer & Jaringan</p>
+            </div>
+
+            <!-- Kartu Data -->
+            <div class="space-y-3">
+                <!-- NISN -->
+                <div class="flex items-center p-4 bg-slate-50/50 rounded-2xl border border-slate-100">
+                    <div class="w-10 h-10 bg-blue-100 rounded-xl flex items-center justify-center text-blue-600 mr-4 shrink-0">
+                        <i class="fas fa-id-card"></i>
+                    </div>
+                    <div>
+                        <p class="text-[10px] uppercase font-bold text-slate-400">NIS / NISN</p>
+                        <p class="text-sm font-bold text-slate-700">232410041</p>
+                    </div>
+                </div>
+
+                <!-- Jurusan -->
+                <div class="flex items-center p-4 bg-slate-50/50 rounded-2xl border border-slate-100">
+                    <div class="w-10 h-10 bg-indigo-100 rounded-xl flex items-center justify-center text-indigo-600 mr-4 shrink-0">
+                        <i class="fas fa-laptop-code"></i>
+                    </div>
+                    <div>
+                        <p class="text-[10px] uppercase font-bold text-slate-400">Kompetensi Keahlian</p>
+                        <p class="text-sm font-bold text-slate-700">TKJ (Teknik Komputer & Jaringan)</p>
+                    </div>
+                </div>
+
+                <!-- Lokasi -->
+                <div class="flex items-center p-4 bg-slate-50/50 rounded-2xl border border-slate-100">
+                    <div class="w-10 h-10 bg-cyan-100 rounded-xl flex items-center justify-center text-cyan-600 mr-4 shrink-0">
+                        <i class="fas fa-map-marker-alt"></i>
+                    </div>
+                    <div>
+                        <p class="text-[10px] uppercase font-bold text-slate-400">Lokasi Sekolah</p>
+                        <p class="text-sm font-bold text-slate-700">Haurgeulis, Indramayu</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tombol Aksi -->
+            <div class="mt-8 grid grid-cols-2 gap-3">
+                <button onclick="window.print()" class="flex items-center justify-center gap-2 bg-slate-800 text-white py-3 rounded-2xl font-bold text-xs shadow-lg hover:bg-black transition-all active:scale-95">
+                    <i class="fas fa-download"></i> Simpan Kartu
+                </button>
+                <button class="flex items-center justify-center gap-2 bg-blue-600 text-white py-3 rounded-2xl font-bold text-xs shadow-lg hover:bg-blue-700 transition-all active:scale-95">
+                    <i class="fas fa-share-alt"></i> Bagikan
+                </button>
+            </div>
+
+            <p class="mt-8 text-center text-[10px] text-slate-400 font-medium tracking-widest uppercase">
+                Sistem Informasi Manajemen Siswa &copy; 2024
+            </p>
+        </div>
     </div>
-</div>
 
 </body>
 </html>
