@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kue Lezat - Rahma Julia</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/可靠/js/all.min.js"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Playfair+Display:wght@700&display=swap');
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            scroll-behavior: smooth;
+        }
+        .font-brand {
+            font-family: 'Playfair Display', serif;
+        }
+        .cart-badge {
+            position: absolute;
+            top: -8px;
+            right: -8px;
+            background: #ef4444;
+            color: white;
+            border-radius: 50%;
+            padding: 2px 6px;
+            font-size: 10px;
+        }
+    </style>
+</head>
+<body class="bg-pink-50 text-gray-800">
+
+    <!-- Header -->
+    <header class="bg-white shadow-md sticky top-0 z-50">
+        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+            <div class="flex items-center gap-3">
+                <img src="https://simangu.smksalirsyad-hgl.sch.id/apimangu/uploads/siswa/232410041/1773195979_c04e0d35.png" alt="Logo Kue Lezat" class="h-12 w-12 object-contain rounded-full border border-pink-200">
+                <h1 class="text-2xl font-bold text-pink-600 font-brand">Kue Lezat</h1>
+            </div>
+            
+            <nav class="hidden md:flex gap-6 font-medium">
+                <a href="#" class="hover:text-pink-500 transition">Beranda</a>
+                <a href="#kategori" class="hover:text-pink-500 transition">Kategori</a>
+                <a href="#katalog" class="hover:text-pink-500 transition">Katalog</a>
+                <a href="#testimoni" class="hover:text-pink-500 transition">Testimoni</a>
+            </nav>
+
+            <div class="relative cursor-pointer" onclick="toggleCart()">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-pink-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
+                </svg>
+                <span id="cart-count" class="cart-badge">0</span>
+            </div>
+        </div>
+    </header>
+
+    <!-- Banner -->
+    <section class="relative h-[400px] md:h-[500px] overflow-hidden">
+        <img src="https://simangu.smksalirsyad-hgl.sch.id/apimangu/uploads/siswa/232410041/1773195998_d0a8e970.png" alt="Banner Kue Lezat" class="w-full h-full object-cover">
+        <div class="absolute inset-0 bg-black/30 flex items-center justify-center text-center px-4">
+            <div class="max-w-2xl">
+                <h2 class="text-4xl md:text-6xl text-white font-brand mb-4 drop-shadow-lg">Manisnya Kebahagiaan di Setiap Gigitan</h2>
+                <p class="text-white text-lg mb-6 drop-shadow-md">Kue homemade premium dengan bahan pilihan untuk momen spesial Anda.</p>
+                <a href="#katalog" class="bg-pink-600 hover:bg-pink-700 text-white px-8 py-3 rounded-full font-bold transition shadow-lg">Pesan Sekarang</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Kategori Produk -->
+    <section id="kategori" class="py-16 container mx-auto px-4">
+        <div class="text-center mb-12">
+            <h3 class="text-3xl font-bold text-gray-800 mb-2">Pilih Kategori</h3>
+            <div class="w-20 h-1 bg-pink-400 mx-auto"></div>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <!-- Birthday Cake -->
+            <div class="group relative overflow-hidden rounded-2xl shadow-lg cursor-pointer h-64">
+                <img src="https://simangu.smksalirsyad-hgl.sch.id/apimangu/uploads/siswa/232410041/1773196020_ddfb79f5.jpg" alt="Birthday Cake" class="w-full h-full object-cover transition duration-500 group-hover:scale-110">
+                <div class="absolute inset-0 bg-gradient-to-t from-pink-900/80 to-transparent flex items-end p-6">
+                    <h4 class="text-xl font-bold text-white">Birthday Cake</h4>
+                </div>
+            </div>
+            <!-- Cup Cake -->
+            <div class="group relative overflow-hidden rounded-2xl shadow-lg cursor-pointer h-64">
+                <img src="https://simangu.smksalirsyad-hgl.sch.id/apimangu/uploads/siswa/232410041/1773196039_d9d72576.jpg" alt="Cup Cake" class="w-full h-full object-cover transition duration-500 group-hover:scale-110">
+                <div class="absolute inset-0 bg-gradient-to-t from-pink-900/80 to-transparent flex items-end p-6">
+                    <h4 class="text-xl font-bold text-white">Cup Cake</h4>
+                </div>
+            </div>
+            <!-- Brownies -->
+            <div class="group relative overflow-hidden rounded-2xl shadow-lg cursor-pointer h-64">
+                <img src="https://simangu.smksalirsyad-hgl.sch.id/apimangu/uploads/siswa/232410041/1773196049_fb418e23.jpg" alt="Brownies" class="w-full h-full object-cover transition duration-500 group-hover:scale-110">
+                <div class="absolute inset-0 bg-gradient-to-t from-pink-900/80 to-transparent flex items-end p-6">
+                    <h4 class="text-xl font-bold text-white">Brownies</h4>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Katalog Produk -->
+    <section id="katalog" class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h3 class="text-3xl font-bold text-gray-800 mb-2">Katalog Produk</h3>
+                <p class="text-gray-500">Koleksi kue terbaik untuk Anda</p>
+            </div>
+            
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8" id="product-list">
+                <!-- Produk 1 -->
+                <div class="bg-pink-50 rounded-2xl p-4 shadow-sm border border-pink-100 hover:shadow-md transition">
+                    <img src="https://simangu.smksalirsyad-hgl.sch.id/apimangu/uploads/siswa/232410041/1773196020_ddfb79f5.jpg" alt="Birthday Cake" class="w-full h-64 object-cover rounded-xl mb-4">
+                    <h4 class="text-xl font-bold text-gray-800">Birthday Cake Premium</h4>
+                    <p class="text-pink-600 font-bold text-lg mb-4">Rp 100.000 - 400.000</p>
+                    <button onclick="addToCart('Birthday Cake', 100000)" class="w-full bg-pink-500 text-white py-2 rounded-lg hover:bg-pink-600 transition flex items-center justify-center gap-2">
+                        <i class="fas fa-plus"></i> Tambah ke Keranjang
+                    </button>
+                </div>
+                <!-- Produk 2 -->
+                <div class="bg-pink-50 rounded-2xl p-4 shadow-sm border border-pink-100 hover:shadow-md transition">
+                    <img src="https://simangu.smksalirsyad-hgl.sch.id/apimangu/uploads/siswa/232410041/1773196039_d9d72576.jpg" alt="Cup Cake" class="w-full h-64 object-cover rounded-xl mb-4">
+                    <h4 class="text-xl font-bold text-gray-800">Cup Cake Cantik</h4>
+                    <p class="text-pink-600 font-bold text-lg mb-4">Rp 30.000</p>
+                    <button onclick="addToCart('Cup Cake', 30000)" class="w-full bg-pink-500 text-white py-2 rounded-lg hover:bg-pink-600 transition flex items-center justify-center gap-2">
+                        <i class="fas fa-plus"></i> Tambah ke Keranjang
+                    </button>
+                </div>
+                <!-- Produk 3 -->
+                <div class="bg-pink-50 rounded-2xl p-4 shadow-sm border border-pink-100 hover:shadow-md transition">
+                    <img src="https://simangu.smksalirsyad-hgl.sch.id/apimangu/uploads/siswa/232410041/1773196049_fb418e23.jpg" alt="Brownies" class="w-full h-64 object-cover rounded-xl mb-4">
+                    <h4 class="text-xl font-bold text-gray-800">Brownies Lumer</h4>
+                    <p class="text-pink-600 font-bold text-lg mb-4">Rp 55.000</p>
+                    <button onclick="addToCart('Brownies', 55000)" class="w-full bg-pink-500 text-white py-2 rounded-lg hover:bg-pink-600 transition flex items-center justify-center gap-2">
+                        <i class="fas fa-plus"></i> Tambah ke Keranjang
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonial Section -->
+    <section id="testimoni" class="py-16 container mx-auto px-4">
+        <div class="text-center mb-12">
+            <h3 class="text-3xl font-bold text-gray-800 mb-2">Apa Kata Mereka?</h3>
+            <p class="text-gray-500">Kesan pelanggan setia kami</p>
+        </div>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12" id="testimonial-container">
+            <div class="bg-white p-6 rounded-2xl shadow-sm italic">
+                <p class="mb-4">"Kue ulang tahunnya sangat cantik dan rasanya tidak terlalu manis, pas banget!"</p>
+                <span class="font-bold text-pink-600">- Sarah Wijaya</span>
+            </div>
+            <div class="bg-white p-6 rounded-2xl shadow-sm italic">
+                <p class="mb-4">"Browniesnya beneran lumer di mulut. Recomended banget untuk oleh-oleh!"</p>
+                <span class="font-bold text-pink-600">- Budi Santoso</span>
+            </div>
+        </div>
+
+        <!-- Feedback Form -->
+        <div class="max-w-xl mx-auto bg-pink-100 p-8 rounded-3xl shadow-inner">
+            <h4 class="text-xl font-bold mb-4 text-center">Berikan Testimoni Anda</h4>
+            <div class="flex flex-col gap-4">
+                <input type="text" id="guest-name" placeholder="Nama Anda (Kosongkan jika ingin sebagai Guest)" class="w-full px-4 py-2 rounded-lg border focus:ring-2 focus:ring-pink-400 outline-none">
+                <textarea id="guest-comment" rows="3" placeholder="Tulis komentar Anda..." class="w-full px-4 py-2 rounded-lg border focus:ring-2 focus:ring-pink-400 outline-none"></textarea>
+                <button onclick="submitTestimony()" class="bg-pink-600 text-white py-2 rounded-lg font-bold hover:bg-pink-700 transition">Kirim Komentar</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="container mx-auto px-4 grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div>
+                <h4 class="text-2xl font-brand text-pink-400 mb-4">Kue Lezat</h4>
+                <p class="text-gray-400">Kue buatan rumah yang dibuat dengan cinta untuk keceriaan setiap keluarga.</p>
+            </div>
+            <div>
+                <h5 class="text-lg font-bold mb-4">Kontak Kami</h5>
+                <p class="text-gray-400">Owner: <span class="text-white">Rahma Julia</span></p>
+                <p class="text-gray-400">Alamat: <span class="text-white">Jl Gusti Ngurah Rai no.56 Jakarta Timur</span></p>
+                <p class="text-gray-400">Email: <span class="text-white">rahmajuli989@gmail.com</span></p>
+            </div>
+            <div>
+                <h5 class="text-lg font-bold mb-4">Link Cepat</h5>
+                <ul class="text-gray-400 space-y-2">
+                    <li><a href="https://rahmajuli989.github.io/" target="_blank" class="hover:text-pink-400 transition">Portofolio Pemilik</a></li>
+                    <li><a href="#" class="hover:text-pink-400 transition">Kebijakan Privasi</a></li>
+                    <li><a href="#" class="hover:text-pink-400 transition">FAQ</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="border-t border-gray-800 mt-12 pt-6 text-center text-gray-500 text-sm">
+            &copy; 2024 Kue Lezat by Rahma Julia. All Rights Reserved.
+        </div>
+    </footer>
+
+    <!-- Shopping Cart Modal (Hidden by default) -->
+    <div id="cart-modal" class="fixed inset-0 bg-black/50 z-[100] hidden flex items-center justify-center px-4">
+        <div class="bg-white w-full max-w-md rounded-3xl overflow-hidden shadow-2xl">
+            <div class="bg-pink-600 p-6 text-white flex justify-between items-center">
+                <h3 class="text-xl font-bold">Keranjang Belanja</h3>
+                <button onclick="toggleCart()" class="text-white text-2xl">&times;</button>
+            </div>
+            <div id="cart-items" class="p-6 max-h-[400px] overflow-y-auto space-y-4">
+                <!-- Items will be injected here -->
+                <p class="text-center text-gray-500 italic">Keranjang masih kosong</p>
+            </div>
+            <div class="p-6 border-t border-gray-100">
+                <div class="flex justify-between items-center mb-6">
+                    <span class="text-lg font-bold">Total Estimasi:</span>
+                    <span id="cart-total" class="text-xl font-bold text-pink-600">Rp 0</span>
+                </div>
+                <button onclick="checkout()" class="w-full bg-green-500 text-white py-4 rounded-2xl font-bold text-lg hover:bg-green-600 transition flex items-center justify-center gap-3 shadow-lg">
+                    <i class="fab fa-whatsapp text-2xl"></i> Pesan via WhatsApp
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let cart = [];
+        const waNumber = "083829423388";
+
+        function addToCart(name, price) {
+            const existingItem = cart.find(item => item.name === name);
+            if (existingItem) {
+                existingItem.qty += 1;
+            } else {
+                cart.push({ name, price, qty: 1 });
+            }
+            updateCartUI();
+            
+            // Notification effect
+            const btn = event.currentTarget;
+            const originalText = btn.innerHTML;
+            btn.innerHTML = '<i class="fas fa-check"></i> Berhasil!';
+            btn.classList.replace('bg-pink-500', 'bg-green-500');
+            setTimeout(() => {
+                btn.innerHTML = originalText;
+                btn.classList.replace('bg-green-500', 'bg-pink-500');
+            }, 1000);
+        }
+
+        function updateCartUI() {
+            const cartItemsDiv = document.getElementById('cart-items');
+            const cartCount = document.getElementById('cart-count');
+            const cartTotal = document.getElementById('cart-total');
+            
+            let totalQty = 0;
+            let totalPrice = 0;
+            
+            if (cart.length === 0) {
+                cartItemsDiv.innerHTML = '<p class="text-center text-gray-500 italic">Keranjang masih kosong</p>';
+            } else {
+                cartItemsDiv.innerHTML = cart.map((item, index) => {
+                    totalQty += item.qty;
+                    totalPrice += (item.price * item.qty);
+                    return `
+                        <div class="flex justify-between items-center bg-gray-50 p-3 rounded-xl">
+                            <div>
+                                <h5 class="font-bold">${item.name}</h5>
+                                <p class="text-sm text-gray-500">Rp ${item.price.toLocaleString()} x ${item.qty}</p>
+                            </div>
+                            <div class="flex items-center gap-2">
+                                <button onclick="changeQty(${index}, -1)" class="w-8 h-8 rounded-full bg-white border border-gray-200 flex items-center justify-center hover:bg-pink-100">-</button>
+                                <span class="font-medium">${item.qty}</span>
+                                <button onclick="changeQty(${index}, 1)" class="w-8 h-8 rounded-full bg-white border border-gray-200 flex items-center justify-center hover:bg-pink-100">+</button>
+                            </div>
+                        </div>
+                    `;
+                }).join('');
+            }
+            
+            cartCount.innerText = totalQty;
+            cartTotal.innerText = `Rp ${totalPrice.toLocaleString()}`;
+        }
+
+        function changeQty(index, delta) {
+            cart[index].qty += delta;
+            if (cart[index].qty <= 0) {
+                cart.splice(index, 1);
+            }
+            updateCartUI();
+        }
+
+        function toggleCart() {
+            const modal = document.getElementById('cart-modal');
+            modal.classList.toggle('hidden');
+        }
+
+        function checkout() {
+            if (cart.length === 0) {
+                alert("Keranjang masih kosong!");
+                return;
+            }
+
+            let message = "Halo Kue Lezat! Saya ingin memesan:\n\n";
+            let total = 0;
+            cart.forEach(item => {
+                message += `- ${item.name} (${item.qty}x): Rp ${(item.price * item.qty).toLocaleString()}\n`;
+                total += (item.price * item.qty);
+            });
+            message += `\n*Total Estimasi: Rp ${total.toLocaleString()}*\n\nMohon informasi selanjutnya. Terima kasih!`;
+            
+            const encodedMsg = encodeURIComponent(message);
+            window.open(`https://wa.me/${waNumber}?text=${encodedMsg}`, '_blank');
+        }
+
+        function submitTestimony() {
+            const nameInput = document.getElementById('guest-name');
+            const commentInput = document.getElementById('guest-comment');
+            const container = document.getElementById('testimonial-container');
+
+            if (!commentInput.value.trim()) {
+                alert("Silakan isi komentar Anda");
+                return;
+            }
+
+            const name = nameInput.value.trim() || "Guest";
+            const comment = commentInput.value.trim();
+
+            const newTestimony = `
+                <div class="bg-white p-6 rounded-2xl shadow-sm italic border-l-4 border-pink-400 animate-pulse">
+                    <p class="mb-4">"${comment}"</p>
+                    <span class="font-bold text-pink-600">- ${name}</span>
+                </div>
+            `;
+
+            container.insertAdjacentHTML('afterbegin', newTestimony);
+            
+            // Reset input
+            nameInput.value = "";
+            commentInput.value = "";
+            
+            // Smooth scroll to top of testimonials
+            document.getElementById('testimoni').scrollIntoView();
+        }
+    </script>
+</body>
+</html>
+
